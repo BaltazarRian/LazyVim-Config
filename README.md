@@ -6,3 +6,45 @@
 
 A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+
+# TMUX-Config
+
+```Bash
+# Tmux settings
+
+# Set XTerm key bindings
+setw -g xterm-keys on
+
+# Set colors
+#set-option -g default-terminal "screen-256color"
+#set -g default-terminal "screen-256color"
+
+# Set reload key to r
+bind r source-file ~/.tmux.conf
+
+# Count sessions start at 1
+# set -g base-index 1
+
+# Use vim bindings
+# setw -g mode-keys vi
+
+# Remap window navigation to vim
+unbind-key j
+bind-key j select-pane -D 
+unbind-key k
+bind-key k select-pane -U
+unbind-key h
+bind-key h select-pane -L
+unbind-key l
+bind-key l select-pane -R
+
+# Split with logical key bindings
+# Also use the current pane path when splitting
+bind - split-window -v -c '#{pane_current_path}'
+bind \\ split-window -h -c '#{pane_current_path}'
+
+set -g default-terminal "xterm-256color"
+set -g terminal-overrides ',xterm-256color:Tc'
+
+set -g mouse on
+```
