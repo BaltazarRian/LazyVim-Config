@@ -1,6 +1,6 @@
 # LazyVim-Config
 
-# 25 Mar 2026 LazyVim Configuration from MacOS
+# 13 October 2026 LazyVim Configuration from Windows 11 w/WSL (Pengwin Enterprise)
 
 # 💤 LazyVim
 
@@ -30,7 +30,7 @@ bind r source-file ~/.tmux.conf
 
 # Remap window navigation to vim
 unbind-key j
-bind-key j select-pane -D 
+bind-key j select-pane -D
 unbind-key k
 bind-key k select-pane -U
 unbind-key h
@@ -43,8 +43,12 @@ bind-key l select-pane -R
 bind - split-window -v -c '#{pane_current_path}'
 bind \\ split-window -h -c '#{pane_current_path}'
 
-set -g default-terminal "xterm-256color"
-set -g terminal-overrides ',xterm-256color:Tc'
+# set -g default-terminal "xterm-256color"
+# set -g terminal-overrides ',xterm-256color:Tc'
 
 set -g mouse on
+
+set-option -g default-terminal "tmux-256color"
+set-option -g focus-events on
+set-option -sg escape-time 10
 ```
